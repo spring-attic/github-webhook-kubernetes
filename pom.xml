@@ -165,6 +165,7 @@
 								<id>push-image</id>
 								<phase>deploy</phase>
 								<goals>
+									<goal>tag</goal>
 									<goal>push</goal>
 								</goals>
 							</execution>
