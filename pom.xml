@@ -155,17 +155,12 @@
 								</resource>
 							</resources>
 							<serverId>${docker.server.id}</serverId>
-							<imageTags>
-								<imageTag>${project.version}</imageTag>
-								<imageTag>latest</imageTag>
-							</imageTags>
 						</configuration>
 						<executions>
 							<execution>
 								<id>push-image</id>
 								<phase>deploy</phase>
 								<goals>
-									<goal>tag</goal>
 									<goal>push</goal>
 								</goals>
 							</execution>
