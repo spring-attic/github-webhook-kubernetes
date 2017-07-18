@@ -156,15 +156,6 @@
 							</resources>
 							<serverId>${docker.server.id}</serverId>
 						</configuration>
-						<executions>
-							<execution>
-								<id>build-image</id>
-								<phase>deploy</phase>
-								<goals>
-									<goal>build</goal>
-								</goals>
-							</execution>
-						</executions>
 					</plugin>
 				</plugins>
 			</build>
