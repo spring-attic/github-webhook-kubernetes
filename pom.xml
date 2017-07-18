@@ -5,7 +5,7 @@
 
 	<groupId>com.example.github</groupId>
 	<artifactId>github-webhook</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>1.0.0.M1-170718_082241-VERSION</version>
 	<packaging>jar</packaging>
 
 	<name>github-webhook</name>
@@ -155,14 +155,28 @@
 								</resource>
 							</resources>
 							<serverId>${docker.server.id}</serverId>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
 						</configuration>
 						<executions>
+							<execution>
+								<id>build-image</id>
+								<phase>package</phase>
+								<goals>
+									<goal>build</goal>
+								</goals>
+							</execution>
 							<execution>
 								<id>push-image</id>
 								<phase>deploy</phase>
 								<goals>
 									<goal>push</goal>
 								</goals>
+								<configuration>
+									<imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
