@@ -5,7 +5,7 @@
 
 	<groupId>com.example.github</groupId>
 	<artifactId>github-webhook</artifactId>
-	<version>1.0.0.M1-170718_082241-VERSION</version>
+	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
 	<name>github-webhook</name>
@@ -157,6 +157,7 @@
 							<serverId>${docker.server.id}</serverId>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
+								<imageTag>${env.PIPELINE_VERSION}</imageTag>
 								<imageTag>latest</imageTag>
 							</imageTags>
 						</configuration>
