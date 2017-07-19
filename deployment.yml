@@ -19,9 +19,9 @@ spec:
             value: "8080"
           - name: SYSTEM_PROPS # additional options to be passed to the running process
             value: "{{systemProps}}"
-          livenessProbe:
-            httpGet:
-              path: /health
-              port: 8080
-            initialDelaySeconds: 30
-            periodSeconds: 3
+#          livenessProbe:
+#            httpGet:
+#              path: /health
+#              port: 8080
+#            initialDelaySeconds: 30
+#            periodSeconds: 3
