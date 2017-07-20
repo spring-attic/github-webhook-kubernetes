@@ -19,11 +19,6 @@ spec:
             value: "8080"
           - name: SYSTEM_PROPS # additional options to be passed to the running process
             value: "{{systemProps}}"
-          resources:
-            limits:
-              memory: 256Mi
-            requests:
-              memory: 128Mi
 #          livenessProbe:
 #            httpGet:
 #              path: /health
