@@ -4,6 +4,7 @@ metadata:
   name: {{appName}}
   labels:
     name: {{appName}}
+    visualize: "true"
 spec:
   ports:
     - port: 8080
