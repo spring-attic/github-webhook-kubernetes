@@ -27,3 +27,11 @@ stage:
     - type: eureka
       name: github-eureka
       coordinates: scpipelines/github-eureka:latest
+prod:
+  services:
+    - type: rabbitmq
+      name: github-rabbitmq
+    - type: mysql
+      name: mysql-github
+    - type: eureka
+      name: github-eureka
