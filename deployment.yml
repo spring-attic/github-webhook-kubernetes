@@ -12,7 +12,7 @@ spec:
             version: {{version}}
       spec:
         containers:
-        - name: {{appName}}
+        - name: {{containerName}}
           image: {{dockerOrg}}/github-webhook:{{version}}
           ports:
           - containerPort: 80
