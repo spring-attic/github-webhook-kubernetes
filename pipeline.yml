@@ -16,7 +16,7 @@ test:
       coordinates: scpipelines/github-eureka:latest
     - type: stubrunner
       name: stubrunner-github-webhook
-      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
+      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs-kubernetes:latest
       useClasspath: true
 stage:
   services:
