@@ -1,0 +1,9 @@
+spring.rabbitmq.addresses: github-rabbitmq
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://github-eureka:8761/eureka/
+  instance:
+    hostname: github-webhook
+    nonSecurePort: 80

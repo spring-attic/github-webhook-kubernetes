@@ -15,10 +15,10 @@ spec:
         - name: {{containerName}}
           image: {{dockerOrg}}/github-webhook:{{version}}
           ports:
-          - containerPort: 80
+          - containerPort: 8080
           env:
           - name: PORT
-            value: "80"
+            value: "8080"
           - name: SYSTEM_PROPS # additional options to be passed to the running process
             value: "{{systemProps}}"
 #          livenessProbe:
