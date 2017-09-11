@@ -1,4 +1,4 @@
-spring.rabbitmq.addresses: github-rabbitmq
+spring.rabbitmq.addresses: github-rabbitmq:5672
 
 eureka:
   client:
