@@ -145,9 +145,17 @@
 						<groupId>com.spotify</groupId>
 						<artifactId>docker-maven-plugin</artifactId>
 						<version>0.4.11</version>
+						<goals>
+							<goal>build</goal>
+							<goal>push</goal>
+						</goals>
 						<configuration>
 							<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
 							<baseImage>frolvlad/alpine-oraclejdk8:slim</baseImage>
+							<imageTags>
+								<imageTag>${project.version}</imageTag>
+								<imageTag>latest</imageTag>
+							</imageTags>
 							<env>
 								<SYSTEM_PROPS>-Dfoo=bar</SYSTEM_PROPS>
 							</env>
@@ -161,6 +169,22 @@
 							</resources>
 							<serverId>${docker.server.id}</serverId>
 						</configuration>
+						<executions>
+							<execution>
+								<id>build-image</id>
+								<phase>package</phase>
+								<goals>
+									<goal>build</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>push-image</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>push</goal>
+								</goals>
+							</execution>
+						</executions>
 					</plugin>
 				</plugins>
 			</build>
