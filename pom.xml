@@ -178,11 +178,24 @@
 								</goals>
 							</execution>
 							<execution>
-								<id>push-image</id>
+								<id>push-latest-image</id>
 								<phase>deploy</phase>
 								<goals>
 									<goal>push</goal>
 								</goals>
+								<configuration>
+									<imageName>${docker.image.prefix}/${project.artifactId}:latest</imageName>
+								</configuration>
+							</execution>
+							<execution>
+								<id>push-versioned-image</id>
+								<phase>deploy</phase>
+								<goals>
+									<goal>push</goal>
+								</goals>
+								<configuration>
+									<imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+								</configuration>
 							</execution>
 						</executions>
 					</plugin>
