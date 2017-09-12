@@ -23,7 +23,8 @@ stage:
     - type: rabbitmq
       name: github-rabbitmq
     - type: mysql
-      name: mysql-github
+      name: mysql-github-webhook
+      database: example
     - type: eureka
       name: github-eureka
       coordinates: scpipelines/github-eureka:latest
