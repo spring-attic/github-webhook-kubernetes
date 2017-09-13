@@ -48,7 +48,7 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-kubernetes-netflix</artifactId>
+			<artifactId>spring-cloud-starter-kubernetes</artifactId>
 			<version>0.2.0.RELEASE</version>
 		</dependency>
 		<dependency>
