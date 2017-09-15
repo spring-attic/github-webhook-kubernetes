@@ -1,0 +1,30 @@
+# This file describes which services are required by this application
+# in order for the smoke tests on the TEST environment and end to end tests
+# on the STAGE environment to pass
+
+# lowercase name of the environment
+test:
+  # list of required services
+  services:
+    - type: rabbitmq
+      name: rabbitmq-github-webhook
+    - type: mysql
+      name: mysql-github-webhook
+      database: example
+    - type: eureka
+      name: eureka-github-webhook
+      coordinates: scpipelines/github-eureka:latest
+    - type: stubrunner
+      name: stubrunner-github-webhook
+      coordinates: scpipelines/github-analytics-stub-runner-boot-classpath-stubs:latest
+      useClasspath: true
+stage:
+  services:
+    - type: rabbitmq
+      name: github-rabbitmq
+    - type: mysql
+      name: mysql-github-webhook
+      database: example
+    - type: eureka
+      name: github-eureka
+      coordinates: scpipelines/github-eureka:latest
