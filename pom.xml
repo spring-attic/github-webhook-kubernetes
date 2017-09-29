@@ -31,9 +31,9 @@
 		<!-- [PIPELINE] -->
 		<repo.with.jars>http://localhost:8081/artifactory/libs-release-local</repo.with.jars>
 		<!-- KUBERNETES -->
-		<docker.image.prefix>scpipelines</docker.image.prefix>
-		<docker.server.id>docker-repo</docker.server.id>
-		<docker.registry.url>hub.docker.com</docker.registry.url>
+		<DOCKER_REGISTRY_ORGANIZATION>scpipelines</DOCKER_REGISTRY_ORGANIZATION>
+		<DOCKER_SERVER_ID>docker-repo</DOCKER_SERVER_ID>
+		<DOCKER_REGISTRY_URL>https://index.docker.io/v1/</DOCKER_REGISTRY_URL>
 	</properties>
 
 	<dependencies>
@@ -150,7 +150,9 @@
 							<goal>push</goal>
 						</goals>
 						<configuration>
-							<imageName>${docker.image.prefix}/${project.artifactId}</imageName>
+							<serverId>${DOCKER_SERVER_ID}</serverId>
+							<registryUrl>${DOCKER_REGISTRY_URL}</registryUrl>
+							<imageName>${DOCKER_REGISTRY_ORGANIZATION}/${project.artifactId}</imageName>
 							<baseImage>frolvlad/alpine-oraclejdk8:slim</baseImage>
 							<imageTags>
 								<imageTag>${project.version}</imageTag>
@@ -184,7 +186,7 @@
 									<goal>push</goal>
 								</goals>
 								<configuration>
-									<imageName>${docker.image.prefix}/${project.artifactId}:latest</imageName>
+									<imageName>${DOCKER_REGISTRY_ORGANIZATION}/${project.artifactId}:latest</imageName>
 								</configuration>
 							</execution>
 							<execution>
@@ -194,7 +196,7 @@
 									<goal>push</goal>
 								</goals>
 								<configuration>
-									<imageName>${docker.image.prefix}/${project.artifactId}:${project.version}</imageName>
+									<imageName>${DOCKER_REGISTRY_ORGANIZATION}/${project.artifactId}:${project.version}</imageName>
 								</configuration>
 							</execution>
 						</executions>
