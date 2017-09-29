@@ -169,7 +169,6 @@
 									<include>${project.build.finalName}.jar</include>
 								</resource>
 							</resources>
-							<serverId>${docker.server.id}</serverId>
 						</configuration>
 						<executions>
 							<execution>
