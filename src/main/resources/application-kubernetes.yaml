@@ -3,4 +3,4 @@ spring.rabbitmq.addresses: github-rabbitmq:5672
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://github-eureka:8761/eureka
+      defaultZone: https://github-eureka:8761/eureka
